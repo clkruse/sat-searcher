@@ -1,0 +1,1 @@
+Download data from [sat-searcher Google Drive](https://drive.google.com/drive/folders/1lac_YcJHp_6GlVFZo4AE3wN4qhx3mrct?usp=drive_link). Unzip centroids and embeddings_8bit folders and place in this outputs directory.

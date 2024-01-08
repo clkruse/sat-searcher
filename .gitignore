@@ -1,0 +1,9 @@
+
+.DS_Store
+*.pyc
+outputs/centroids
+outputs/embeddings_8bit
+outputs/embeddings
+outputs/geometries
+*.zip
+misc/*
