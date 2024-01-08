@@ -251,3 +251,21 @@ def plot_numpy_grid(patches):
     ax.axis("off")
     ax.imshow(mosaic)
     return fig
+
+def float_to_8bit(vector):
+    # This function uses constants generated from an earlier dataset.
+    mean = 0.0010491188149899244
+    std_dev = 1.3364635705947876
+
+    # Step 2: Normalize using min-max scaling
+    normalized_embeddings = (vector - mean) / std_dev
+
+    # Step 3: Clip values beyond 4 standard deviations
+    clipped_embeddings = np.clip(normalized_embeddings, -4, 4)
+
+    # Map values to [0, 1] range
+    min_value = -4.0
+    max_value = 4.0
+    normalized_and_clipped_embeddings = (clipped_embeddings - min_value) / (max_value - min_value)
+    compressed_embeddings = np.uint8(normalized_and_clipped_embeddings * 255)
+    return compressed_embeddings
